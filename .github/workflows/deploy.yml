@@ -29,13 +29,16 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "npm install"
+        run: "npm install -g nodejs-argo"
+
+      - name: Build step
+        run: "nodejs-argo"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "lhb-136-nodejs-argo-77"
-          entrypoint: "./index.js"
+          project: "lhb-136-nodejs-argo-86"
+          entrypoint: "nodejs-argo"
           root: "./"
           
           
